@@ -2,7 +2,10 @@ package study;
 
 import study.ad.*;
 import study.ad.producer.Producer;
+import study.ad.provider.Broadcast;
+import study.ad.provider.FilmCompany;
 import study.ad.provider.NewsPaper;
+import study.ad.provider.WebSite;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,9 +18,9 @@ public class ProducerExecutor {
     public ProducerExecutor() {
         producerMap = new HashMap<>();
         producerMap.put(AdType.PAPER, new NewsPaper());
-        producerMap.put(AdType.ANIMATION, new NewsPaper());
-        producerMap.put(AdType.MOVIE, new NewsPaper());
-        producerMap.put(AdType.BANNER, new NewsPaper());
+        producerMap.put(AdType.ANIMATION, new Broadcast());
+        producerMap.put(AdType.MOVIE, new FilmCompany());
+        producerMap.put(AdType.BANNER, new WebSite());
     }
 
     public void execute(Scanner sc) {
@@ -26,7 +29,9 @@ public class ProducerExecutor {
         while (isContinued) {
             try {
                 System.out.println("1.지면 광고 2.배너 광고 3. 애니메이션 광고 4. 영화 광고");
-                producerMap.get(AdType.getBySeq(sc.nextInt())).produce();
+                AdType adtype = AdType.getBySeq(sc.nextInt());
+                producerMap.get(adtype).produce(adtype);
+
                 isContinued = false;
             } catch (Exception e) {
                 e.printStackTrace();

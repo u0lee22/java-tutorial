@@ -2,11 +2,15 @@ package study.ad.provider;
 
 import study.ad.Ad;
 
+import java.util.List;
+
 public interface Provider<T extends Ad> {
 
-    T selectAd();
+    T selectAd(String adName);
 
-    default void post() {
-        System.out.println(this.selectAd().getContent());
-    }
+    List<String> getAdLists();
+
+    void createAd();
+
+    default void post() {}
 }

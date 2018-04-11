@@ -1,21 +1,20 @@
 package study.ad.provider;
 
 import study.ad.AdType;
-import study.ad.PaperAd;
+import study.ad.BannerAd;
 import study.ad.producer.Producer;
 
 import java.util.List;
 
-public class NewsPaper implements Provider<PaperAd>, Producer<PaperAd> {
-
+public class WebSite implements Provider<BannerAd>, Producer<BannerAd> {
 
     @Override
-    public PaperAd produce(AdType adType) {
+    public BannerAd produce(AdType adType) {
         return null;
     }
 
     @Override
-    public PaperAd selectAd(String adName) {
+    public BannerAd selectAd(String adName) {
         return null;
     }
 
