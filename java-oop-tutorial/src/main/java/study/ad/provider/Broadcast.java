@@ -15,8 +15,7 @@ public class Broadcast implements Provider<AnimationAd>, Producer<AnimationAd> {
     }
 
     @Override
-    public AnimationAd selectAd(String adName) {
-        return null;
+    public void selectAd(String adName) {
     }
 
     @Override

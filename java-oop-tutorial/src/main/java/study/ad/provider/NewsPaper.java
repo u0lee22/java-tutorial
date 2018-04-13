@@ -15,8 +15,7 @@ public class NewsPaper implements Provider<PaperAd>, Producer<PaperAd> {
     }
 
     @Override
-    public PaperAd selectAd(String adName) {
-        return null;
+    public void selectAd(String adName) {
     }
 
     @Override

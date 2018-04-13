@@ -45,30 +45,17 @@ public class FileManager {
         return results;
     }
 
-//    public File getFileContent(String directory, String filename) {
-//        String filePath = savePath + directory + "/" + filename;
-//        try {
-//            BufferedReader reader = new BufferedReader(new FileReader(filePath));
-//        } catch (Exception ex) {
-//
-//        }
-//
-//
-//        String s;
-//
-//        while ((s = in.readLine()) != null) {
-//            System.out.println(s);
-//        }
-//        in.close();
-//
-//        String filePath = savePath + directory + "/";
-//        File files = new File(filePath).listFiles();
-//        for (File file : files) {
-//            if (file.isFile()) {
-//                results.add(file);
-//            }
-//        }
-//        return results;
-//    }
+    public void getFileContent(String directory, String filename) {
+        String filePath = savePath + directory + "/" + filename;
+        String content;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            while ((content = reader.readLine()) != null) {
+                System.out.println(content);
+            }
+        } catch (Exception ex) {
+
+        }
+    }
 
 }

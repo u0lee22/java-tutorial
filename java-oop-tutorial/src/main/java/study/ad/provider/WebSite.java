@@ -14,8 +14,8 @@ public class WebSite implements Provider<BannerAd>, Producer<BannerAd> {
     }
 
     @Override
-    public BannerAd selectAd(String adName) {
-        return null;
+    public void selectAd(String adName) {
+
     }
 
     @Override

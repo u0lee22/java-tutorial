@@ -33,7 +33,8 @@ public class FilmCompany implements Provider<MovieAd>, Producer<MovieAd> {
                         }
                         int selectedAdName = sc.nextInt();
                         if (selectedAdName > 0 && selectedAdName < adLists.size() + 1) {
-                            return selectAd(adLists.get(selectedAdName));
+                            selectAd(adLists.get(selectedAdName));
+                            break;
                         }
                         System.out.println("광고 조회를 종료합니다.");
                         break;
@@ -52,8 +53,9 @@ public class FilmCompany implements Provider<MovieAd>, Producer<MovieAd> {
     }
 
     @Override
-    public MovieAd selectAd(String adName) {
-        return null;
+    public void selectAd(String adName) {
+        FileManager fileManager = new FileManager();
+        fileManager.getFileContent(adType,adName);
     }
 
     @Override
